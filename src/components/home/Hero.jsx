@@ -33,7 +33,7 @@ export default function Hero() {
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.14]"
         style={{
-          backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+          backgroundImage: "radial-gradient(circle at 1px 1px, #ff0000 1px, transparent 0)",
           backgroundSize: "26px 26px",
         }}
       />
