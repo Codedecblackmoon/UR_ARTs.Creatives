@@ -74,19 +74,19 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:slug" element={<ServiceDetail />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/work/:slug" element={<CaseStudy />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy" element={<Legal doc="privacy" />} />
-          <Route path="/terms" element={<Legal doc="terms" />} />
-          <Route path="/cookies" element={<Legal doc="cookies" />} />
-        </Route>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/work" element={<Work />} />
+            <Route path="/work/:slug" element={<CaseStudy />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Legal doc="privacy" />} />
+            <Route path="/terms" element={<Legal doc="terms" />} />
+            <Route path="/cookies" element={<Legal doc="cookies" />} />
+          </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       </Router>

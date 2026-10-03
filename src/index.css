@@ -307,4 +307,37 @@
     font-family: var(--font-marker);
   }
 }
-```
+
+.clip_path {
+  /* Fallback: square notches on the left and right edges */
+  clip-path: polygon(
+    0 0, 100% 0,
+    100% 10%, calc(100% - 1.25rem) 10%,
+    calc(100% - 1.25rem) 94%, 100% 94%,
+    100% 100%, 0 100%,
+    0 94%, 1.25rem 94%,
+    1.25rem 10%, 0 10%
+  );
+}
+
+/* Rounded notches, like the screenshot */
+@supports (clip-path: shape(from 0 0, line to 1px 1px)) {
+  .clip_path {
+    --r: 1.25rem; /* notch depth and corner radius */
+    clip-path: shape(
+      from 0 0,
+      hline to 100%,
+      vline to 10%,
+      arc to calc(100% - var(--r)) calc(10% + var(--r)) of var(--r) ccw,
+      vline to calc(94% - var(--r)),
+      arc to 100% 94% of var(--r) ccw,
+      vline to 100%,
+      hline to 0,
+      vline to 94%,
+      arc to var(--r) calc(94% - var(--r)) of var(--r) ccw,
+      vline to calc(10% + var(--r)),
+      arc to 0 10% of var(--r) ccw,
+      close
+    );
+  }
+}

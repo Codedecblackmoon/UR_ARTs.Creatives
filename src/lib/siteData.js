@@ -1,7 +1,31 @@
-import { Globe, Fingerprint, Search, Target, PenTool, Share2 } from "lucide-react";
+import { createElement } from "react";
+import socile from "@/assets/send.png";
+import cup from "@/assets/cup.png";
+import gd from "@/assets/GD.png";
+import node from "@/assets/node.png";
+import r3 from "@/assets/r3.png";
+import suzan from "@/assets/suzan.png";
+import logo from "@/assets/URARTs.png";
 
-export const LOGO_URL =
-  "https://media.base44.com/images/public/6abaa6dc9b0790a0aa248155/6e9ebb070_URARTs2.png";
+
+// Turns an image file into a component that behaves like a lucide icon,
+// so <Icon className="w-6 h-6" /> works for both icons and images.
+const imgIcon = (src, alt = "") => {
+  const ImageIcon = (props) =>
+    createElement("img", { src, alt, className: "object-contain", ...props });
+  return ImageIcon;
+};
+
+const SocialIcon = imgIcon(socile, "Social media");
+const CupIcon = imgIcon(cup, "Cup");
+const GDIcon = imgIcon(gd, "GD");
+const NodeIcon = imgIcon(node, "Node");
+const R3Icon = imgIcon(r3, "R3");
+const SuzanIcon = imgIcon(suzan, "Suzan");
+const lo = imgIcon(logo, "URARTs Logo");
+
+export const LOGO_URL = lo
+  
 
 export const CONTACT = {
   email: "hello@urarts.co.za",
@@ -26,7 +50,7 @@ export const SERVICES = [
     slug: "web-design",
     name: "Web Design & Development",
     short: "Fast, striking websites — built, hosted and maintained for you.",
-    Icon: Globe,
+    Icon: CupIcon,
     pitch:
       "Websites that look sharp, load fast and turn visitors into customers — designed, built, hosted and maintained by us.",
     included: [
@@ -54,7 +78,7 @@ export const SERVICES = [
     slug: "branding",
     name: "Branding",
     short: "Identities with a voice loud enough to be remembered.",
-    Icon: Fingerprint,
+    Icon: SuzanIcon,
     pitch:
       "A brand is more than a logo. We build the name, look, voice and rules that make you instantly recognisable.",
     included: [
@@ -81,7 +105,7 @@ export const SERVICES = [
     slug: "seo",
     name: "SEO",
     short: "Get found on Google — and stay at the top.",
-    Icon: Search,
+    Icon: R3Icon,
     pitch:
       "Technical fixes, keyword strategy and content that move you up the rankings — and keep you there.",
     included: [
@@ -108,7 +132,7 @@ export const SERVICES = [
     slug: "paid-ads",
     name: "Paid Ads",
     short: "Google & Facebook campaigns that earn their budget back.",
-    Icon: Target,
+    Icon: NodeIcon,
     pitch:
       "Targeted Google and Facebook campaigns built to bring in leads and sales — measured down to the last rand.",
     included: [
@@ -135,7 +159,7 @@ export const SERVICES = [
     slug: "graphic-design",
     name: "Graphic Design",
     short: "Scroll-stopping visuals for print and screen.",
-    Icon: PenTool,
+    Icon: GDIcon,
     pitch:
       "From social posts to packaging, we design the visuals that carry your message with style and clarity.",
     included: [
@@ -162,7 +186,7 @@ export const SERVICES = [
     slug: "social-media",
     name: "Social Media Marketing",
     short: "Content and community that build a real following.",
-    Icon: Share2,
+    Icon: SocialIcon,
     pitch:
       "Strategy, content and community management that keep your brand in the feed and on people's minds.",
     included: [
